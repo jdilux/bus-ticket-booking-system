@@ -1,0 +1,72 @@
+body {
+    background-color: #f2f2f2;
+    color: #333333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+  }
+  
+  header {
+    background-color: lightblue;
+    padding: 10px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline-block;
+  }
+  
+  nav ul li a {
+    color: #333333;
+    text-decoration: none;
+    padding: 5px 10px;
+  }
+  
+  nav ul li.user-account {
+    float: right;
+  }
+  
+  main {
+    margin: 20px;
+  }
+  
+  h1 {
+    color: lightblue;
+  }
+  
+  form label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="tel"] {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+  }
+  
+  form input[type="submit"] {
+    background-color: lightblue;
+    color: #333333;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  footer {
+    background-color: lightblue;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  

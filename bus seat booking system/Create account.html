@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Abirami Travels | Create account</title>
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f2f2f2;
+                margin: 0;
+                padding: 0;
+            }
+        
+            .topnav {
+                background-color: #333;
+                overflow: hidden;
+            }
+        
+            .topnav a {
+                float: left;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+            
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+            
+            .topnav a.active {
+                background-color: #4CAF50;
+                color: white;
+            }
+
+            form {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+                width: 600px;
+                margin: 50px auto;
+            }
+
+            h1 {
+                text-align: center;
+                color: #333;
+            }
+
+            label {
+                display: block;
+                margin-top: 20px;
+                font-size: 18px;
+                font-weight: bold;
+                color: #333;
+            }
+            
+            input, select {
+                display: block;
+                width: 100%;
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                background-color: #f2f2f2;
+                font-size: 16px;
+                color: #666;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            }
+
+            input[type="text"],
+            input[type="tel"],
+            input[type="email"] {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin-bottom: 20px;
+                font-size: 16px;
+            }
+            
+            input[type="submit"] {
+                display: inline-block;
+                text-align: center;
+                width: 100%;
+                margin: 10px;
+                font-size: 15pt;
+                margin-top: 50px;
+                background-color: #4CAF50;
+                color: black;
+                text-decoration: none;
+                border-style: none;
+                border-radius: 5px;
+            }
+
+            input[type="submit"]:hover {
+                cursor: pointer;
+                background-color: black;
+                color: white;
+            }
+
+            .signin p{
+                text-align: center;
+            }
+
+            footer {
+                background-color: #333;
+                color: #fff;
+                padding: 30px 0;
+                font-size: 14px;
+            }
+
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            .row {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .col {
+                flex: 1;
+                margin: 0 20px;
+            }
+
+            h3 {
+                font-size: 18px;
+                margin-bottom: 20px;
+            }
+
+            p {
+                margin-bottom: 20px;
+            }
+
+            .social-icons {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+            }
+
+            .social-icons li {
+                margin-right: 10px;
+            }
+
+            .social-icons li a {
+                display: block;
+                width: 30px;
+                height: 30px;
+                background-color: #fff;
+                text-align: center;
+                line-height: 30px;
+                border-radius: 50%;
+            }
+
+            .social-icons li a:hover {
+                background-color: #f2f2f2;
+            }
+
+            .fa {
+                color: #333;
+                font-size: 16px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <form onsubmit="return validateForm();" method="post" action="Create_account_Database.php">
+            <h1>Create an account with Abirami Travels</h1>
+
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name"> 
+
+            <label for="NIC Number">NIC Number:</label>
+            <input type="text" id="NIC_Number" name="NIC_Number">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"> 
+
+            <label for="password">Password:</label>
+            <input type="text" id="password" name="password"> 
+            
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone">
+            
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city">
+            
+            <label for="gender">Gender:</label>
+            <select type="text" id="gender" name="gender">
+                <option value="">--Select--</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <input type="submit" value="Create account">      
+
+            <div class="signin">
+                <p>Already have an account?</p>
+                <p><a href="Sign in.html">Sign in</a></p>
+            </div>
+        </form>
+
+        <script>
+            // Function to validate the form
+            function validateForm() {
+                var name = document.getElementById("name").value;
+                var nicNumber = document.getElementById("NIC_Number").value;
+                var email = document.getElementById("email").value;
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("password").value;
+                var phone = document.getElementById("phone").value;
+                var city = document.getElementById("city").value;
+                var gender = document.getElementById("gender").value;
+        
+                // Validation for name: Should contain only letters and spaces
+                var namePattern = /^[a-zA-Z\s]+$/;
+                if (!name.match(namePattern)) {
+                    alert("Please enter a valid name.");
+                    return false;
+                }
+
+                // Validation for NIC Number: Should be in a specific format (adjust as needed)
+                var nicPattern = /^[0-9]{9}[VvXx]$/;
+                if (!nicNumber.match(nicPattern)) {
+                    alert("Please enter a valid NIC Number (e.g., 123456789V).");
+                    return false;
+                }
+
+                // Validation for email: Should be a valid email address
+                var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (!email.match(emailPattern)) {
+                    alert("Please enter a valid email address.");
+                    return false;
+                }
+
+                // Validation for username: Should contain only letters and numbers
+                var usernamePattern = /^[a-zA-Z0-9]+$/;
+                if (!username.match(usernamePattern)) {
+                    alert("Username should contain only letters and numbers.");
+                    return false;
+                }
+
+                // Validation for password: You can define your own password requirements
+                // Here, we're checking that the password is at least 8 characters long
+                if (password.length < 8) {
+                    alert("Password must be at least 8 characters long.");
+                    return false;
+                }
+
+                // Validation for phone number: Should be in a specific format (adjust as needed)
+                var phonePattern = /^\d{10}$/;
+                if (!phone.match(phonePattern)) {
+                    alert("Please enter a valid 10-digit phone number.");
+                    return false;
+                }
+
+                // Validation for the "From" field: You can define your own validation rules
+                if (city.length < 3) {
+                    alert("Please enter a valid source location.");
+                    return false;
+                }
+
+                // Validation for the Gender field: Make sure it's not empty
+                if (gender === "") {
+                    alert("Please select your gender.");
+                    return false;
+                }
+
+                // If all validations pass, return true to submit the form
+                return true;
+            }
+        </script>
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h3>About Us</h3>
+                        <p>&copy:E-Bus Ticket Booking</p>
+                    </div>
+                    <div class="col">
+                        <h3>Contact Us</h3>
+                        <p>Phone: 011-1234567<br>Email: info@busticketbooking.com</p>
+                    </div>
+                    <div class="col">
+                        <h3>Follow Us</h3>
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
